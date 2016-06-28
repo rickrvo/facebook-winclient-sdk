@@ -183,12 +183,12 @@ namespace Facebook.Client.Controls.WebDialog
 #endif
 
 #if WINDOWS_PHONE
-            dialogWebBrowser.Navigate(new Uri(String.Format("https://m.facebook.com/v2.1/dialog/apprequests?access_token={0}&redirect_uri=fb{2}%3A%2F%2Fsuccess&app_id={1}&message={3}&display=touch{4}&title={5}", Session.ActiveSession.CurrentAccessTokenData.AccessToken, Session.AppId, Session.AppId, message, idBuilder.Length > 4 ? idBuilder.ToString() : String.Empty, title)));
+            dialogWebBrowser.Navigate(new Uri(String.Format("https://m.facebook.com/v2.5/dialog/apprequests?access_token={0}&redirect_uri=fb{2}%3A%2F%2Fsuccess&app_id={1}&message={3}&display=touch{4}&title={5}", Session.ActiveSession.CurrentAccessTokenData.AccessToken, Session.AppId, Session.AppId, message, idBuilder.Length > 4 ? idBuilder.ToString() : String.Empty, title)));
 #endif
 
 #if WP8
 
-            dialogWebBrowser.Navigate(new Uri(String.Format("https://m.facebook.com/v2.1/dialog/apprequests?access_token={0}&redirect_uri=fbconnect%3A%2F%2Fsuccess&app_id={1}&message={2}&display=touch{3}&title={4}", Session.ActiveSession.CurrentAccessTokenData.AccessToken, Session.AppId, message, idBuilder.Length > 4 ? idBuilder.ToString() : String.Empty, title)));
+            dialogWebBrowser.Navigate(new Uri(String.Format("https://m.facebook.com/v2.5/dialog/apprequests?access_token={0}&redirect_uri=fbconnect%3A%2F%2Fsuccess&app_id={1}&message={2}&display=touch{3}&title={4}", Session.ActiveSession.CurrentAccessTokenData.AccessToken, Session.AppId, message, idBuilder.Length > 4 ? idBuilder.ToString() : String.Empty, title)));
 #endif
         }
 
@@ -204,12 +204,12 @@ namespace Facebook.Client.Controls.WebDialog
                 }
             }
 
-            Launcher.LaunchUriAsync(new Uri(String.Format("https://m.facebook.com/v2.1/dialog/apprequests?access_token={0}&redirect_uri={2}&app_id={1}&message={5}&display=touch{3}&title={4}&data={6}", Session.ActiveSession.CurrentAccessTokenData.AccessToken, Session.AppId, Session.AppRequestRedirectUri, idBuilder.Length > 4 ? idBuilder.ToString() : String.Empty, title, message, data)));
+            Launcher.LaunchUriAsync(new Uri(String.Format("https://m.facebook.com/v2.5/dialog/apprequests?access_token={0}&redirect_uri={2}&app_id={1}&message={5}&display=touch{3}&title={4}&data={6}", Session.ActiveSession.CurrentAccessTokenData.AccessToken, Session.AppId, Session.AppRequestRedirectUri, idBuilder.Length > 4 ? idBuilder.ToString() : String.Empty, title, message, data)));
         }
 
         internal static void ShowFeedDialogViaBrowser(string toId = "", string link = "", string linkName = "", string linkCaption = "", string linkDescription = "", string picture = "")
         {
-            Launcher.LaunchUriAsync(new Uri(String.Format("https://m.facebook.com/v2.1/dialog/feed?access_token={0}&redirect_uri={2}&app_id={1}&display=touch&to={3}&link={4}&name={5}&caption={6}&description={7}&picture={8}", Session.ActiveSession.CurrentAccessTokenData.AccessToken, Session.AppId, Session.FeedRedirectUri, toId, link, linkName, linkCaption, linkDescription, picture)));
+            Launcher.LaunchUriAsync(new Uri(String.Format("https://m.facebook.com/v2.5/dialog/feed?access_token={0}&redirect_uri={2}&app_id={1}&display=touch&to={3}&link={4}&name={5}&caption={6}&description={7}&picture={8}", Session.ActiveSession.CurrentAccessTokenData.AccessToken, Session.AppId, Session.FeedRedirectUri, toId, link, linkName, linkCaption, linkDescription, picture)));
         }
 
 
@@ -225,11 +225,11 @@ namespace Facebook.Client.Controls.WebDialog
 #endif
 
 #if WP8
-            dialogWebBrowser.Navigate(new Uri(String.Format("https://m.facebook.com/v2.1/dialog/feed?access_token={0}&redirect_uri=fbconnect%3A%2F%2Fsuccess&app_id={1}&display=touch&to={2}&link={3}&name={4}&caption={5}&description={6}&picture={7}", Session.ActiveSession.CurrentAccessTokenData.AccessToken, Session.AppId, toId, link, linkName, linkCaption, linkDescription, picture)));
+            dialogWebBrowser.Navigate(new Uri(String.Format("https://m.facebook.com/v2.5/dialog/feed?access_token={0}&redirect_uri=fbconnect%3A%2F%2Fsuccess&app_id={1}&display=touch&to={2}&link={3}&name={4}&caption={5}&description={6}&picture={7}", Session.ActiveSession.CurrentAccessTokenData.AccessToken, Session.AppId, toId, link, linkName, linkCaption, linkDescription, picture)));
 #endif
 
 #if WINDOWS_PHONE
-            dialogWebBrowser.Navigate(new Uri(String.Format("https://m.facebook.com/v2.1/dialog/feed?access_token={0}&redirect_uri=fb{2}%3A%2F%2Fsuccess&app_id={1}&display=touch&to={3}&link={4}&name={5}&caption={6}&description={7}&picture={8}", Session.ActiveSession.CurrentAccessTokenData.AccessToken, Session.AppId, Session.AppId, toId, link, linkName, linkCaption, linkDescription, picture)));
+            dialogWebBrowser.Navigate(new Uri(String.Format("https://m.facebook.com/v2.5/dialog/feed?access_token={0}&redirect_uri=fb{2}%3A%2F%2Fsuccess&app_id={1}&display=touch&to={3}&link={4}&name={5}&caption={6}&description={7}&picture={8}", Session.ActiveSession.CurrentAccessTokenData.AccessToken, Session.AppId, Session.AppId, toId, link, linkName, linkCaption, linkDescription, picture)));
 
 #endif
 

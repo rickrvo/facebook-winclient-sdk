@@ -13,7 +13,7 @@ namespace Facebook.Client
         {
             FacebookClient _client = new FacebookClient(accessToken);
             
-            String finalUrl = String.Format("https://graph.facebook.com/v2.0/?ids={0}&type=al&fields=windows,windows_phone,windows_universal", sourceUrl);
+            String finalUrl = String.Format("https://graph.facebook.com/v2.5/?ids={0}&type=al&fields=windows,windows_phone,windows_universal", sourceUrl);
             dynamic appLinkData = await _client.GetTaskAsync(finalUrl);
             List<Target> targets = new List<Target>();
 

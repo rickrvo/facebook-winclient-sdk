@@ -1,6 +1,8 @@
 # Facebook C# SDK for Windows & Windows Phone
 The Facebook C# SDK for Windows & Windows Phone helps .NET developers build Windows Phone and Windows Store applications that integrate with Facebook.
 
+branch APIv2.5 uses Facebook API v2.5
+
 [Like us on Facebook at our official page](http://facebook.com/csharpsdk) or [Follow us on twitter @chsarpsdk](http://twitter.com/csharpsdk).
 
 ## NuGet

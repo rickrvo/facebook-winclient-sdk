@@ -480,7 +480,7 @@ namespace Facebook.Client
                     Uri uri =
                         new Uri(
                             String.Format(
-                                "https://m.facebook.com/v2.1/dialog/oauth?redirect_uri={0}&display=touch&state=%7B%220is_active_session%22%3A1%2C%22is_open_session%22%3A1%2C%22com.facebook.sdk_client_state%22%3A1%2C%223_method%22%3A%22browser_auth%22%7D&scope={2}&type=user_agent&client_id={1}&sdk=ios",
+                                "https://m.facebook.com/v2.5/dialog/oauth?redirect_uri={0}&display=touch&state=%7B%220is_active_session%22%3A1%2C%22is_open_session%22%3A1%2C%22com.facebook.sdk_client_state%22%3A1%2C%223_method%22%3A%22browser_auth%22%7D&scope={2}&type=user_agent&client_id={1}&sdk=ios",
                                 LoginRedirectUri, appId, permissions), UriKind.Absolute);
                     
                     Launcher.LaunchUriAsync(uri);
@@ -498,7 +498,7 @@ namespace Facebook.Client
                     Uri uri =
                         new Uri(
                             String.Format(
-                                "https://m.facebook.com/v2.1/dialog/oauth?redirect_uri={0}%3A%2F%2Fauthorize&display=touch&state=%7B%220is_active_session%22%3A1%2C%22is_open_session%22%3A1%2C%22com.facebook.sdk_client_state%22%3A1%2C%223_method%22%3A%22browser_auth%22%7D&scope={2}&type=user_agent&client_id={1}&sdk=ios",
+                                "https://m.facebook.com/v2.5/dialog/oauth?redirect_uri={0}%3A%2F%2Fauthorize&display=touch&state=%7B%220is_active_session%22%3A1%2C%22is_open_session%22%3A1%2C%22com.facebook.sdk_client_state%22%3A1%2C%223_method%22%3A%22browser_auth%22%7D&scope={2}&type=user_agent&client_id={1}&sdk=ios",
                                 String.Format("fb{0}", appId), appId, permissions), UriKind.Absolute);
 #else
                     Uri uri = await GetLoginUrl(permissions);
@@ -573,7 +573,7 @@ namespace Facebook.Client
             if (DateTime.UtcNow - ActiveSession.CurrentAccessTokenData.Issued > TimeSpan.FromHours(24)) // one day 
             {
                 var client = new HttpClient();
-                String tokenExtendUri = "https://graph.facebook.com/v2.1";
+                String tokenExtendUri = "https://graph.facebook.com/v2.5";
                 client.BaseAddress = new Uri(tokenExtendUri);
 
                 var request = new HttpRequestMessage();
